@@ -792,7 +792,10 @@ do
       end
     end,
     default_format_opts = {
+      --[[
       lsp_format = 'fallback', -- Use external formatters if configured below, otherwise use LSP formatting. Set to `false` to disable LSP formatting entirely.
+      --]]
+      lsp_format = false,
     },
     -- You can also specify external formatters in here.
     formatters_by_ft = {
