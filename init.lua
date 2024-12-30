@@ -740,7 +740,19 @@ do
   --  See `:help lsp-config` for information about keys and how to configure
   ---@type table<string, vim.lsp.Config>
   local servers = {
-    -- clangd = {},
+    clangd = {
+      cmd = {
+        'clangd',
+        '--compile-commands-dir=builddir',
+        '--background-index',
+        '--background-index-priority=low',
+        '--clang-tidy',
+        '--completion-style=detailed',
+        '--header-insertion=iwyu',
+        '--enable-config',
+        '--log=verbose',
+      },
+    },
     -- gopls = {},
     -- pyright = {},
     -- tsc = {},
@@ -749,7 +761,8 @@ do
     --    https://github.com/mrcjkb/rustaceanvim
     --
     -- But for many setups, the LSP (`rust_analyzer`) will work just fine
-    -- rust_analyzer = {},
+    rust_analyzer = {
+    },
 
     stylua = {}, -- Used to format Lua code
 
